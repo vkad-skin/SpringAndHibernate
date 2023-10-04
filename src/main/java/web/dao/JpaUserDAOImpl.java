@@ -5,7 +5,6 @@ import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class JpaUserDAOImpl implements UserDAO {
 
     @Override
     public void deleteUserById(int id) {
-        entityManager.createQuery("delete from User u where u.id= :id ")
+        entityManager.createQuery("delete from User u where u.id= :id ", User.class)
                 .setParameter("id", id).executeUpdate();
     }
 }
