@@ -26,22 +26,21 @@ public class UsersController {
         return "all-users";
     }
 
-    @GetMapping("/add-new-user")
+    @GetMapping("/new-user")
     public String addNewUser(ModelMap model) {
         User user = new User();
         model.addAttribute("user", user);
         return "info-user";
     }
 
-    @PostMapping("/add-new-user")
-    public String saveUser(@ModelAttribute User user) {
-        System.out.println(user.getId());
+    @PostMapping("/add-or-update-user")
+    public String saveOrUpdateUser(@ModelAttribute User user) {
         userService.saveUser(user);
         return "redirect:/show-all-users";
     }
 
-    @GetMapping("/update-user")
-    public String updateUser(@RequestParam("userId") int id, ModelMap model) {
+    @GetMapping("/get-user")
+    public String getUserById(@RequestParam("userId") int id, ModelMap model) {
         User user = userService.getUser(id);
         model.addAttribute("user", user);
         return "info-user";

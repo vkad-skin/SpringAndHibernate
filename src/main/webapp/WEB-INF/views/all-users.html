@@ -27,7 +27,7 @@
         <td th:utext="${user.age}"></td>
         <td th:utext="${user.email}"></td>
         <td>
-        <form action="#" th:action="@{/update-user}">
+        <form action="#" th:action="@{/get-user}">
             <button type="submit" th:name="userId" th:value="${user.id}">Update</button>
         </form>
         </td>
@@ -40,7 +40,8 @@
     </tr>
 </table>
 <br>
-<input type="button" value="Add"
-    onclick="window.location.href='add-new-user'"/>
+<form action="#" th:action="@{/new-user}">
+    <button type="submit">Add</button>
+</form>
 </body>
 </html>

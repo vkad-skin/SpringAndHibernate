@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Info User</h1>
-<form action="#" th:action="@{/add-new-user}" th:object="${user}" method="post">
+<form action="#" th:action="@{/add-or-update-user}" th:object="${user}" method="post">
     <input type="hidden" th:field="*{id}" />
 
     <p>Name: <input type="text" th:field="*{name}" /></p>
