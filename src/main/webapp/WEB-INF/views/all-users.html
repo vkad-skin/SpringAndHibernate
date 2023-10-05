@@ -33,7 +33,7 @@
         </td>
 
         <td>
-        <form action="#" th:action="@{/delete-user}">
+        <form action="#" th:method="DELETE" th:action="@{/delete-user}">
             <button type="submit" th:name="userId" th:value="${user.id}">Delete</button>
         </form>
         </td>
